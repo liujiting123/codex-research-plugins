@@ -1,0 +1,32 @@
+{
+  "name": "codex-research-plugins",
+  "interface": {
+    "displayName": "Codex Research Plugins"
+  },
+  "plugins": [
+    {
+      "name": "paper-reader",
+      "source": {
+        "source": "local",
+        "path": "./plugins/paper-reader"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "codex-native-themes",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codex-native-themes"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark" data-paper-theme="dark" data-paper-mode="host" data-view="reader">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>论文阅读</title>
+  <style>/*READER_CSS*/</style>
+</head>
+<body>
+  <svg class="theme-filter" aria-hidden="true" width="0" height="0"><defs><filter id="paper-palette" color-interpolation-filters="sRGB"><feColorMatrix type="hueRotate" values="180"/><feColorMatrix id="paper-opacity" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/><feComponentTransfer><feFuncR id="paper-r" type="table" tableValues="0.80392 0.11765"/><feFuncG id="paper-g" type="table" tableValues="0.84314 0.11765"/><feFuncB id="paper-b" type="table" tableValues="0.95294 0.18039"/></feComponentTransfer></filter></defs></svg>
+  <div id="app">
+    <aside class="library" id="library">
+      <header class="brand"><span class="brand-mark" aria-hidden="true">▤</span><div><h1>论文阅读</h1><p>原文在手边，问题在聊天里</p></div><button class="icon-button mobile-close" id="close-library" aria-label="收起文献库">×</button></header>
+      <div class="library-controls">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索标题、作者、年份" aria-label="搜索论文"></label>
+        <select id="collection" aria-label="筛选 Zotero 收藏夹"><option value="">全部文献</option></select>
+        <div class="library-line"><span id="paper-count">Zotero 文献库</span><button id="refresh" class="text-button">刷新</button></div>
+      </div>
+      <div id="paper-list" class="paper-list" aria-label="论文列表"><div class="list-placeholder">正在连接 Zotero…</div></div>
+      <button id="more" class="more" hidden>加载更多</button>
+      <footer class="library-footer"><label class="local-file">打开本地 PDF<input id="local-file" type="file" accept="application/pdf,.pdf" hidden></label><span>原始文件保持不变</span></footer>
+    </aside>
+    <main class="reader">
+      <header class="toolbar">
+        <button id="toggle-library" class="icon-button" title="显示或收起文献库" aria-label="显示或收起文献库">☰</button>
+        <div class="document-title"><strong id="document-title">选择一篇论文</strong><span id="document-meta">PDF 原文 · 选段问答</span></div>
+        <button id="paper-theme" class="text-button paper-theme" aria-pressed="true" title="切换跟随 Codex 或原色纸张">跟随 Codex</button>
+        <button id="side-panel" class="icon-button" hidden title="与当前对话并排阅读" aria-label="与当前对话并排阅读">◫</button>
+      </header>
+      <nav class="page-tools" aria-label="PDF 阅读工具">
+        <div class="page-navigation"><button id="previous" class="icon-button" disabled aria-label="上一页">‹</button><label><input id="page-number" type="number" min="1" value="1" disabled aria-label="页码"><span id="page-total">/ —</span></label><button id="next" class="icon-button" disabled aria-label="下一页">›</button></div>
+        <div class="zoom-tools"><button id="zoom-out" class="icon-button" disabled aria-label="缩小">−</button><button id="fit" class="text-button" disabled>适合宽度</button><button id="zoom-in" class="icon-button" disabled aria-label="放大">+</button></div>
+        <button id="ask-page" class="text-button" disabled>问这一页</button>
+      </nav>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <section id="pdf-scroll" class="pdf-scroll" aria-label="PDF 原始论文">
+        <div id="welcome" class="welcome"><div class="welcome-mark" aria-hidden="true">▤</div><h2>把原文放在聊天旁边</h2><p>从文献库选一篇论文，或打开本地 PDF。<br>选中文字，就能解释、翻译或追问。</p><div class="welcome-detail"><span>保留公式与图表</span><span>自动带上原文页码</span></div></div>
+        <div id="pdf-pages" class="pdf-pages"></div>
+      </section>
+      <section id="selection-panel" class="selection-dock" aria-label="选段操作" hidden>
+        <div class="selection-heading"><span id="selection-location">原文选段</span><button id="close-selection" class="icon-button" aria-label="清除原文选段">×</button></div>
+        <details id="selection-excerpt"><summary id="selection-summary">查看选段</summary><blockquote id="selected-text"></blockquote></details>
+        <div class="selection-actions"><button data-action="explain" class="secondary">解释这段</button><button data-action="translate" class="secondary">翻译</button><button data-action="formula" class="secondary">解释公式</button><button id="send-question" class="primary" data-action="reference">带到左侧对话 ↗</button></div>
+        <div id="selection-status" class="selection-status" role="status"></div>
+      </section>
+      <footer class="reader-status"><span id="reader-status">等待打开论文</span><span id="transport-label">继续在左侧 Codex 中提问</span></footer>
+    </main>
+  </div>
+  <script type="module">/*PDF_WORKER*/</script>
+  <script type="module">/*PDF_LIBRARY*/</script>
+  <script type="module">/*READER_JS*/</script>
+</body>
+</html>

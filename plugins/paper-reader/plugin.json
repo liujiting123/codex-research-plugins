@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "paper-reader",
+  "version": "0.2.6",
+  "description": "Read original Zotero PDFs beside chat and ask questions about selected passages with page references.",
+  "author": {
+    "name": "Jiting Liu",
+    "url": "https://github.com/liujiting123"
+  },
+  "homepage": "https://github.com/liujiting123/codex-research-plugins",
+  "repository": "https://github.com/liujiting123/codex-research-plugins",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "research",
+    "pdf",
+    "zotero"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "论文阅读",
+        "shortDescription": "在当前对话右侧直接选论文、读原文",
+        "longDescription": "在任意已有 Codex 对话的右上角「＋／新标签页」中选择「论文阅读器」，搜索 Zotero 并点击论文直接阅读 PDF。选段解释和翻译留在当前对话，纸张跟随 Codex 主题，可切回原色。左侧全局入口也可直接浏览文献和 PDF。",
+        "developerName": "Jiting Liu",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive",
+          "Read"
+        ],
+        "defaultPrompt": [
+          "打开论文阅读器。",
+          "用论文阅读器打开 Zotero 中的 OpenVLA。"
+        ],
+        "brandColor": "#52638D",
+        "brandColorDark": "#CDD7F3",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "codex-native-themes",
+  "version": "0.1.2",
+  "description": "An integrated Codex skin studio with wallpaper, glass effects and DSH Dream Skin compatibility.",
+  "author": {
+    "name": "Jiting Liu",
+    "url": "https://github.com/liujiting123"
+  },
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "皮肤工作室",
+    "shortDescription": "DSH 主题、壁纸与玻璃效果，直接在插件里管理",
+    "longDescription": "macOS 实验版。管理 DSH 主题、图片壁纸、渐变与玻璃效果，并同步论文阅读器。原生配色通过 Codex 配置接口保存；完整效果使用本机运行时连接，首次连接需确认重开 Codex。可暂停并还原。",
+    "developerName": "Jiting Liu",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "打开皮肤工作室。",
+      "把 DSH 的星云紫应用到 Codex。"
+    ],
+    "brandColor": "#a991f7",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg"
+  }
+}
